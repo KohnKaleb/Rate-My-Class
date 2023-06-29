@@ -1,12 +1,21 @@
 <!DOCTYPE html>
-<html>
+{% load static %}
+<html lang="en">
 <head>
   <title>Rate My Class</title>
+  <script src="{% static 'homepage.js' %}"></script>
 </head>
 <body>
+  <script>
+    var courses = JSON.parse('{{ courses | safe }}');
+  </script>  
   <header>
     <h1>Rate my Class</h1>
   </header>
+  <div class="ui-widget">
+    <label for="courseSearch">Search for a Class</label>
+    <input id="courseSearch" placeholder="Search for a class">
+  </div>
   <footer>
     <p>&copy; 2023 Marina Hernandez & Kaleb Kohn</p>
   </footer>
